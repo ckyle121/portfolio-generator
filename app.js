@@ -15,12 +15,28 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'name',
-            message: 'What is your name?'
+            message: 'What is your name?',
+            validate: nameInput => {
+                if (nameInput){
+                    return true;
+                } else{
+                    console.log('Please enter your name');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'github',
-            message: 'Enter your GitHub Username'
+            message: 'Enter your GitHub Username',
+            validate: githubInput => {
+                if (githubInput){
+                    return true
+                } else{
+                    console.log('Please enter your GitHub UserName');
+                    return false
+                }
+            }
         },
         {
             type: 'input',
@@ -49,7 +65,15 @@ const promtProject = portfolioData => {
         {
             type: 'input',
             name: 'name',
-            message: 'Provide a description of the project (Required)'
+            message: 'Provide a description of the project (Required)',
+            validate: descripitonInput => {
+                if (descripitonInput){
+                    return true;
+                } else{
+                    console.log('Please enter a description');
+                    return false;
+                }
+            }
         },
         {
             type: 'checkbox',
@@ -60,7 +84,15 @@ const promtProject = portfolioData => {
         {
             type: 'confirm',
             name: 'link',
-            message: 'Enter the GitHub link to your project/repository (Required)'
+            message: 'Enter the GitHub link to your project/repository (Required)',
+            validate: linkInput => {
+                if (linkInput){
+                    return true;
+                } else {
+                    console.log('Please enter the link to your GitHub project/repository');
+                    return false;
+                }
+            }
         },
         {
             type: 'confirm',
